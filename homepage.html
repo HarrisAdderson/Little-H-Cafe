@@ -4,10 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Two of Us Cafe - Coffee, food and good company.">
-<title>Two of Us Cafe</title>
+
+<title>The Two of Us Cafe</title>
 
 <style>
+
 /* =========================
    RESET
 ========================= */
@@ -23,10 +24,9 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f7f3ed;
-    color: #2c241f;
-    line-height: 1.6;
+    font-family: "Inter", Arial, sans-serif;
+    background: #fff9e1;
+    color: #53311b;
 }
 
 /* =========================
@@ -37,15 +37,19 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #ddd2c5;
+
+    background: #fff9e1;
+
+    border-bottom: 1px solid #e5d9bd;
 }
 
 nav {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
-    padding: 16px 25px;
+
+    min-height: 90px;
+
+    padding: 15px 30px;
 
     display: flex;
     align-items: center;
@@ -53,7 +57,7 @@ nav {
 }
 
 .logo {
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 800;
     letter-spacing: 2px;
 }
@@ -64,26 +68,79 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 35px;
+
     list-style: none;
 }
 
 .nav-links a {
-    color: #2c241f;
+    color: #53311b;
     text-decoration: none;
+
     font-weight: 600;
-    transition: 0.25s;
+
+    transition: 0.2s;
 }
 
 .nav-links a:hover {
-    color: #96704f;
+    color: #8b5a35;
 }
 
 .order-button {
-    background: #2c241f;
-    color: white !important;
-    padding: 11px 20px;
-    border-radius: 30px;
+    background: #53311b;
+    color: white;
+
+    padding: 12px 23px;
+
+    border-radius: 100px;
+
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.mobile-button {
+    display: none;
+
+    border: none;
+    background: none;
+
+    color: #53311b;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+.mobile-nav {
+    display: none;
+
+    background: #fff9e1;
+
+    padding: 15px 30px;
+
+    border-top: 1px solid #e5d9bd;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav a {
+    display: block;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #eadfc7;
+
+    text-decoration: none;
+
+    color: #53311b;
+
+    font-weight: 600;
 }
 
 /* =========================
@@ -95,19 +152,15 @@ nav {
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
-    text-align: center;
-    color: white;
-
-    padding: 60px 20px;
+    padding: 60px 30px;
 
     background:
         linear-gradient(
-            rgba(30,25,20,0.55),
-            rgba(30,25,20,0.55)
+            rgba(35, 25, 17, 0.48),
+            rgba(35, 25, 17, 0.48)
         ),
-        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=90");
+        url("https://images.unsplash.com/photo-1675071676919-82bc10274d56?auto=format&fit=crop&w=2400&q=90");
 
     background-size: cover;
     background-position: center;
@@ -115,44 +168,66 @@ nav {
 
 .hero-content {
     max-width: 850px;
+    margin: auto;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: white;
 }
 
-.hero-small {
+.hero-label {
     text-transform: uppercase;
+
     letter-spacing: 5px;
+
     font-size: 14px;
-    margin-bottom: 15px;
+
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(50px, 9vw, 105px);
-    line-height: 0.95;
-    margin-bottom: 25px;
+    font-size: clamp(55px, 9vw, 110px);
+
+    line-height: 0.9;
+
+    font-weight: 800;
+
+    margin-bottom: 30px;
 }
 
-.hero-description {
-    font-size: 21px;
-    margin-bottom: 35px;
+.hero p {
+    font-size: 22px;
+
+    max-width: 650px;
+
+    margin: auto;
 }
 
 .hero-buttons {
+    margin-top: 35px;
+
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
 .button {
     display: inline-block;
+
     padding: 14px 28px;
-    border-radius: 30px;
+
+    border-radius: 100px;
+
     text-decoration: none;
-    font-weight: bold;
+
+    font-weight: 700;
+
     transition: 0.25s;
 }
 
@@ -162,17 +237,13 @@ nav {
 
 .button-light {
     background: white;
-    color: #2c241f;
+    color: #53311b;
 }
 
 .button-outline {
-    border: 2px solid white;
     color: white;
-}
 
-.button-dark {
-    background: #2c241f;
-    color: white;
+    border: 2px solid white;
 }
 
 /* =========================
@@ -184,23 +255,30 @@ section {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: auto;
 }
 
-.section-label {
+.label {
+    color: #8b5a35;
+
     text-transform: uppercase;
+
     letter-spacing: 3px;
+
     font-size: 13px;
-    color: #96704f;
-    font-weight: bold;
+
+    font-weight: 700;
 }
 
 .section-title {
-    font-family: Georgia, serif;
-    font-size: clamp(38px, 5vw, 58px);
-    line-height: 1.1;
-    margin: 12px 0 22px;
+    font-size: clamp(38px, 6vw, 65px);
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    margin: 15px 0 25px;
 }
 
 /* =========================
@@ -209,24 +287,32 @@ section {
 
 .about {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+
+    gap: 65px;
+
     align-items: center;
 }
 
 .about-image {
-    min-height: 470px;
-    border-radius: 20px;
+    min-height: 500px;
 
     background:
-        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=90")
-        center/cover;
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1400&q=90")
+        center / cover;
+
+    border-radius: 10px;
 }
 
 .about-text p {
-    color: #665a51;
-    font-size: 17px;
+    font-size: 18px;
+
+    line-height: 1.7;
+
     margin-bottom: 20px;
+
+    color: #65452f;
 }
 
 /* =========================
@@ -234,115 +320,160 @@ section {
 ========================= */
 
 .menu-section {
-    background: #eee7dd;
+    background: #fff9e1;
 }
 
 .menu-heading {
     text-align: center;
-    max-width: 700px;
+
+    max-width: 800px;
+
     margin: auto;
 }
 
 .menu-heading p {
-    color: #665a51;
+    font-size: 18px;
+
+    color: #765943;
+
+    margin-bottom: 50px;
 }
 
-.menu-grid {
+/* ACTUAL MENU */
+
+.menu-gallery {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    align-items: start;
+}
+
+.menu-image-card {
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(83,49,27,0.12);
+
+    border: 1px solid #eadfc7;
+}
+
+.menu-image-card img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+.menu-image-title {
+    padding: 20px 25px;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+/* =========================
+   ORDERING MESSAGE
+========================= */
+
+.ordering {
     margin-top: 50px;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
+    padding: 45px;
 
-.menu-card {
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-
-    transition: 0.25s;
-}
-
-.menu-card:hover {
-    transform: translateY(-5px);
-}
-
-.menu-card h3 {
-    font-family: Georgia, serif;
-    font-size: 27px;
-
-    border-bottom: 1px solid #ddd2c5;
-
-    padding-bottom: 15px;
-    margin-bottom: 5px;
-}
-
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-
-    padding: 15px 0;
-
-    border-bottom: 1px solid #eee;
-}
-
-.menu-item:last-child {
-    border-bottom: none;
-}
-
-.menu-item-name {
-    font-weight: 600;
-}
-
-.menu-price {
-    color: #96704f;
-    font-weight: bold;
-    text-align: right;
-}
-
-.full-menu {
     text-align: center;
-    margin-top: 40px;
+
+    background: #53311b;
+
+    color: white;
+
+    border-radius: 10px;
+}
+
+.ordering h3 {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.ordering p {
+    color: #fff4d5;
+
+    font-size: 17px;
 }
 
 /* =========================
    VISIT
 ========================= */
 
-.info-grid {
+.visit-section {
+    background: #f5edcf;
+}
+
+.visit-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 
     margin-top: 45px;
 }
 
 .info-card {
-    background: white;
-
-    border: 1px solid #e1d8cd;
-    border-radius: 18px;
+    background: #fff9e1;
 
     padding: 35px;
 
-    transition: 0.25s;
-}
+    border-radius: 10px;
 
-.info-card:hover {
-    transform: translateY(-4px);
+    border: 1px solid #e4d8ba;
 }
 
 .info-card h3 {
-    font-family: Georgia, serif;
-    font-size: 26px;
-    margin-bottom: 14px;
+    font-size: 25px;
+
+    margin-bottom: 15px;
 }
 
 .info-card p {
-    color: #665a51;
+    line-height: 1.7;
+
+    color: #65452f;
+}
+
+/* =========================
+   HOURS
+========================= */
+
+.hours {
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px 40px;
+}
+
+.hours div {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid #e1d5b8;
 }
 
 /* =========================
@@ -350,21 +481,25 @@ section {
 ========================= */
 
 .cta {
-    background: #2c241f;
+    background: #53311b;
+
     color: white;
+
     text-align: center;
 }
 
-.cta .section-label {
-    color: #c7a57e;
+.cta .label {
+    color: #e6b798;
 }
 
 .cta p {
     max-width: 650px;
-    margin: 0 auto 30px;
 
-    color: #ddd4cc;
-    font-size: 17px;
+    margin: auto auto 30px;
+
+    color: #fff4d5;
+
+    font-size: 18px;
 }
 
 /* =========================
@@ -372,17 +507,20 @@ section {
 ========================= */
 
 footer {
-    background: #181310;
-    color: #aaa19a;
+    background: #302019;
+
+    color: #d8c8ba;
 
     padding: 55px 25px 25px;
 }
 
 .footer-grid {
-    max-width: 1100px;
+    max-width: 1150px;
+
     margin: auto;
 
     display: grid;
+
     grid-template-columns: 2fr 1fr 1fr;
 
     gap: 50px;
@@ -390,18 +528,22 @@ footer {
 
 .footer-column h3 {
     color: white;
+
     margin-bottom: 15px;
+}
+
+.footer-column p {
+    line-height: 1.7;
 }
 
 .footer-column a {
     display: block;
 
-    color: #aaa19a;
+    color: #d8c8ba;
+
     text-decoration: none;
 
     margin: 8px 0;
-
-    transition: 0.2s;
 }
 
 .footer-column a:hover {
@@ -409,30 +551,15 @@ footer {
 }
 
 .copyright {
-    max-width: 1100px;
+    max-width: 1150px;
+
     margin: 40px auto 0;
 
     padding-top: 20px;
 
-    border-top: 1px solid #332c27;
+    border-top: 1px solid #584238;
 
     font-size: 13px;
-}
-
-/* =========================
-   MOBILE MENU BUTTON
-========================= */
-
-.mobile-menu {
-    display: none;
-
-    background: none;
-    border: none;
-
-    font-size: 28px;
-    cursor: pointer;
-
-    color: #2c241f;
 }
 
 /* =========================
@@ -441,27 +568,24 @@ footer {
 
 @media (max-width: 850px) {
 
-    .nav-links {
-        display: none;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
+    .nav-links,
     .order-button {
         display: none;
+    }
+
+    .mobile-button {
+        display: block;
     }
 
     .about {
         grid-template-columns: 1fr;
     }
 
-    .menu-grid {
+    .menu-gallery {
         grid-template-columns: 1fr;
     }
 
-    .info-grid {
+    .visit-grid {
         grid-template-columns: 1fr;
     }
 
@@ -469,8 +593,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .hours {
+        grid-template-columns: 1fr;
+    }
+
     .hero {
-        min-height: 620px;
+        min-height: 600px;
     }
 
     .about-image {
@@ -478,36 +606,6 @@ footer {
     }
 }
 
-/* =========================
-   MOBILE NAVIGATION
-========================= */
-
-.mobile-nav {
-    display: none;
-
-    background: white;
-
-    padding: 15px 25px;
-
-    border-top: 1px solid #eee;
-}
-
-.mobile-nav.active {
-    display: block;
-}
-
-.mobile-nav a {
-    display: block;
-
-    color: #2c241f;
-    text-decoration: none;
-
-    padding: 12px 0;
-
-    font-weight: 600;
-
-    border-bottom: 1px solid #eee;
-}
 </style>
 </head>
 
@@ -526,17 +624,32 @@ footer {
     </div>
 
     <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#visit">Visit</a></li>
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#menu">Menu</a>
+        </li>
+
+        <li>
+            <a href="#visit">Visit</a>
+        </li>
     </ul>
 
     <a href="#menu" class="order-button">
         View Menu
     </a>
 
-    <button class="mobile-menu" onclick="toggleMenu()">
+    <button
+        class="mobile-button"
+        onclick="toggleMenu()"
+        aria-label="Open navigation"
+    >
         ☰
     </button>
 
@@ -544,10 +657,21 @@ footer {
 
 <div class="mobile-nav" id="mobileNav">
 
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#menu" onclick="closeMenu()">Menu</a>
-    <a href="#visit" onclick="closeMenu()">Visit</a>
+    <a href="#home" onclick="closeMenu()">
+        Home
+    </a>
+
+    <a href="#about" onclick="closeMenu()">
+        About
+    </a>
+
+    <a href="#menu" onclick="closeMenu()">
+        Menu
+    </a>
+
+    <a href="#visit" onclick="closeMenu()">
+        Visit
+    </a>
 
 </div>
 
@@ -558,37 +682,36 @@ footer {
      HERO
 ========================= -->
 
-<main>
-
 <section class="hero" id="home">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="hero-small">
-            Welcome to
-        </div>
+    <div class="hero-label">
+        The Two of Us Cafe
+    </div>
 
-        <h1>
-            Two of Us Cafe
-        </h1>
+    <h1>
+        Coffee + Cravings
+    </h1>
 
-        <p class="hero-description">
-            Good coffee, good food and good company.
-        </p>
+    <p>
+        Freshly made food, great coffee and good times
+        in the heart of Gympie.
+    </p>
 
-        <div class="hero-buttons">
+    <div class="hero-buttons">
 
-            <a href="#menu" class="button button-light">
-                Explore Menu
-            </a>
+        <a href="#menu" class="button button-light">
+            See Our Menu
+        </a>
 
-            <a href="#visit" class="button button-outline">
-                Visit Us
-            </a>
-
-        </div>
+        <a href="#visit" class="button button-outline">
+            Find Us
+        </a>
 
     </div>
+
+</div>
 
 </section>
 
@@ -605,24 +728,24 @@ footer {
 
     <div class="about-text">
 
-        <div class="section-label">
-            Our Cafe
+        <div class="label">
+            Welcome
         </div>
 
         <h2 class="section-title">
-            Made for good moments.
+            Good food.
+            Good coffee.
+            Good company.
         </h2>
 
         <p>
-            Two of Us Cafe is a welcoming local cafe
-            focused on great coffee, delicious food and
-            creating a comfortable place for people to meet.
+            Welcome to The Two of Us Cafe, where freshly
+            made food and drinks are served throughout the day.
         </p>
 
         <p>
-            Whether you're grabbing a quick coffee,
-            meeting friends or enjoying a meal,
-            there's always a reason to stay a little longer.
+            Enjoy breakfast, lunch and our burger nights,
+            with options available for dine-in or takeaway.
         </p>
 
     </div>
@@ -642,183 +765,54 @@ footer {
 
     <div class="menu-heading">
 
-        <div class="section-label">
+        <div class="label">
             Our Menu
         </div>
 
         <h2 class="section-title">
-            Something for everyone.
+            What are you craving?
         </h2>
 
         <p>
-            Explore some of the cafe favourites.
-            Prices that aren't displayed are available
-            at the ordering station.
+            Take a look through our current menu.
+            All menu items are available for dine-in
+            or takeaway.
         </p>
 
     </div>
 
 
-    <div class="menu-grid">
+    <div class="menu-gallery">
 
-        <!-- COFFEE -->
+        <!-- ACTUAL ALL DAY MENU -->
 
-        <div class="menu-card">
+        <div class="menu-image-card">
 
-            <h3>
-                Coffee
-            </h3>
+            <img
+                src="https://aaa452ad1578a412df6b.cdn6.editmysite.com/uploads/b/aaa452ad1578a412df6bedb7955aac38cb92ce4a66901761a1586cffb75b14cf/2026-08-25_12-19-07_1787624381.jpg"
+                alt="The Two of Us Cafe All Day Menu"
+                loading="lazy"
+            >
 
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Espresso
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Long Black
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Latte
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Cappuccino
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Flat White
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
+            <div class="menu-image-title">
+                All Day Menu
             </div>
 
         </div>
 
 
-        <!-- BREAKFAST -->
+        <!-- ACTUAL BURGER MENU -->
 
-        <div class="menu-card">
+        <div class="menu-image-card">
 
-            <h3>
-                Breakfast
-            </h3>
+            <img
+                src="https://aaa452ad1578a412df6b.cdn6.editmysite.com/uploads/b/aaa452ad1578a412df6bedb7955aac38cb92ce4a66901761a1586cffb75b14cf/Burger%20menu_1787200770.jpeg"
+                alt="The Two of Us Cafe Burger Menu"
+                loading="lazy"
+            >
 
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Breakfast
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Toast
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Eggs
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Cafe Favourites
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-        </div>
-
-
-        <!-- LUNCH -->
-
-        <div class="menu-card">
-
-            <h3>
-                Lunch
-            </h3>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Sandwiches
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Burgers
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Salads
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
-            </div>
-
-            <div class="menu-item">
-                <span class="menu-item-name">
-                    Daily Specials
-                </span>
-
-                <span class="menu-price">
-                    Ask at ordering station
-                </span>
+            <div class="menu-image-title">
+                Burger Menu
             </div>
 
         </div>
@@ -826,16 +820,30 @@ footer {
     </div>
 
 
-    <div class="full-menu">
+    <div class="ordering">
 
-        <a
-            href="https://www.twoofuscafe.com.au/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button button-dark"
+        <h3>
+            Online Ordering Coming Soon
+        </h3>
+
+        <p>
+            All of our menu items are available for
+            dine-in or takeaway.
+        </p>
+
+        <p style="margin-top:12px;">
+            We're taking phone orders.
+        </p>
+
+        <strong
+            style="
+                display:block;
+                margin-top:10px;
+                font-size:22px;
+            "
         >
-            Visit Official Website
-        </a>
+            0488 335 776
+        </strong>
 
     </div>
 
@@ -848,34 +856,20 @@ footer {
      VISIT
 ========================= -->
 
-<section id="visit">
+<section class="visit-section" id="visit">
 
 <div class="container">
 
-    <div class="section-label">
-        Come Say Hi
+    <div class="label">
+        Come Visit Us
     </div>
 
     <h2 class="section-title">
-        Visit Two of Us.
+        Find The Two of Us.
     </h2>
 
 
-    <div class="info-grid">
-
-        <div class="info-card">
-
-            <h3>
-                Opening Hours
-            </h3>
-
-            <p>
-                Check the official Two of Us Cafe
-                website for the latest opening hours.
-            </p>
-
-        </div>
-
+    <div class="visit-grid">
 
         <div class="info-card">
 
@@ -884,9 +878,60 @@ footer {
             </h3>
 
             <p>
-                Visit the official website for the
-                current cafe location and directions.
+                The Two of Us Cafe
+                <br>
+                2/19 Tozer St
+                <br>
+                Gympie, Queensland 4570
             </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Opening Hours
+            </h3>
+
+            <div class="hours">
+
+                <div>
+                    <span>Monday</span>
+                    <span>7am – 2pm</span>
+                </div>
+
+                <div>
+                    <span>Tuesday</span>
+                    <span>7am – 2pm</span>
+                </div>
+
+                <div>
+                    <span>Wednesday</span>
+                    <span>7am – 2pm</span>
+                </div>
+
+                <div>
+                    <span>Thursday</span>
+                    <span>7am – 2pm</span>
+                </div>
+
+                <div>
+                    <span>Friday</span>
+                    <span>7am – 2pm</span>
+                </div>
+
+                <div>
+                    <span>Saturday</span>
+                    <span>7am – 2pm</span>
+                </div>
+
+                <div>
+                    <span>Sunday</span>
+                    <span>Closed</span>
+                </div>
+
+            </div>
 
         </div>
 
@@ -898,8 +943,21 @@ footer {
             </h3>
 
             <p>
-                For current contact information,
-                visit the official Two of Us Cafe website.
+                Phone orders:
+            </p>
+
+            <p
+                style="
+                    font-size:25px;
+                    font-weight:800;
+                    margin-top:10px;
+                "
+            >
+                0488 335 776
+            </p>
+
+            <p style="margin-top:15px;">
+                admin@twoofuscafe.com.au
             </p>
 
         </div>
@@ -912,40 +970,33 @@ footer {
 
 
 <!-- =========================
-     CALL TO ACTION
+     CTA
 ========================= -->
 
 <section class="cta">
 
 <div class="container">
 
-    <div class="section-label">
-        Two of Us Cafe
+    <div class="label">
+        The Two of Us Cafe
     </div>
 
     <h2 class="section-title">
-        Coffee tastes better together.
+        See you soon.
     </h2>
 
     <p>
-        Come in, grab your favourite drink and enjoy
-        some time with good company.
+        Breakfast, lunch, coffee and burger nights.
+        Come hungry.
     </p>
 
-    <a
-        href="https://www.twoofuscafe.com.au/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button button-light"
-    >
-        Official Website
+    <a href="#menu" class="button button-light">
+        View Menu
     </a>
 
 </div>
 
 </section>
-
-</main>
 
 
 <!-- =========================
@@ -959,11 +1010,12 @@ footer {
     <div class="footer-column">
 
         <h3>
-            Two of Us Cafe
+            The Two of Us Cafe
         </h3>
 
         <p>
-            Good coffee. Good food. Good company.
+            Freshly made food and drinks,
+            served with good company.
         </p>
 
     </div>
@@ -972,13 +1024,24 @@ footer {
     <div class="footer-column">
 
         <h3>
-            Navigate
+            Navigation
         </h3>
 
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#visit">Visit</a>
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#menu">
+            Menu
+        </a>
+
+        <a href="#visit">
+            Visit
+        </a>
 
     </div>
 
@@ -986,16 +1049,16 @@ footer {
     <div class="footer-column">
 
         <h3>
-            Online
+            Contact
         </h3>
 
-        <a
-            href="https://www.twoofuscafe.com.au/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Official Website
-        </a>
+        <p>
+            0488 335 776
+        </p>
+
+        <p>
+            Gympie, Queensland
+        </p>
 
     </div>
 
@@ -1004,31 +1067,28 @@ footer {
 
 <div class="copyright">
 
-    © 2026 Two of Us Cafe. Website concept.
+    © 2026 The Two of Us Cafe
 
 </div>
 
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
 
 function toggleMenu() {
 
-    const menu = document.getElementById("mobileNav");
+    const menu =
+        document.getElementById("mobileNav");
 
     menu.classList.toggle("active");
 
 }
 
-
 function closeMenu() {
 
-    const menu = document.getElementById("mobileNav");
+    const menu =
+        document.getElementById("mobileNav");
 
     menu.classList.remove("active");
 
