@@ -1,0 +1,1041 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Two of Us Cafe - Coffee, food and good company.">
+<title>Two of Us Cafe</title>
+
+<style>
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f3ed;
+    color: #2c241f;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #ddd2c5;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #2c241f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #96704f;
+}
+
+.order-button {
+    background: #2c241f;
+    color: white !important;
+    padding: 11px 20px;
+    border-radius: 30px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            rgba(30,25,20,0.55),
+            rgba(30,25,20,0.55)
+        ),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=90");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-small {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(50px, 9vw, 105px);
+    line-height: 0.95;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    font-size: 21px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-light {
+    background: white;
+    color: #2c241f;
+}
+
+.button-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.button-dark {
+    background: #2c241f;
+    color: white;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section {
+    padding: 90px 25px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: #96704f;
+    font-weight: bold;
+}
+
+.section-title {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.1;
+    margin: 12px 0 22px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    min-height: 470px;
+    border-radius: 20px;
+
+    background:
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=90")
+        center/cover;
+}
+
+.about-text p {
+    color: #665a51;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu-section {
+    background: #eee7dd;
+}
+
+.menu-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.menu-heading p {
+    color: #665a51;
+}
+
+.menu-grid {
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.menu-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+    transition: 0.25s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card h3 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+
+    border-bottom: 1px solid #ddd2c5;
+
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item-name {
+    font-weight: 600;
+}
+
+.menu-price {
+    color: #96704f;
+    font-weight: bold;
+    text-align: right;
+}
+
+.full-menu {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* =========================
+   VISIT
+========================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    margin-top: 45px;
+}
+
+.info-card {
+    background: white;
+
+    border: 1px solid #e1d8cd;
+    border-radius: 18px;
+
+    padding: 35px;
+
+    transition: 0.25s;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+}
+
+.info-card h3 {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    margin-bottom: 14px;
+}
+
+.info-card p {
+    color: #665a51;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    background: #2c241f;
+    color: white;
+    text-align: center;
+}
+
+.cta .section-label {
+    color: #c7a57e;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+
+    color: #ddd4cc;
+    font-size: 17px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #181310;
+    color: #aaa19a;
+
+    padding: 55px 25px 25px;
+}
+
+.footer-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-column h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #aaa19a;
+    text-decoration: none;
+
+    margin: 8px 0;
+
+    transition: 0.2s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    max-width: 1100px;
+    margin: 40px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #332c27;
+
+    font-size: 13px;
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.mobile-menu {
+    display: none;
+
+    background: none;
+    border: none;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    color: #2c241f;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .order-button {
+        display: none;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .about-image {
+        min-height: 350px;
+    }
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+.mobile-nav {
+    display: none;
+
+    background: white;
+
+    padding: 15px 25px;
+
+    border-top: 1px solid #eee;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav a {
+    display: block;
+
+    color: #2c241f;
+    text-decoration: none;
+
+    padding: 12px 0;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid #eee;
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav>
+
+    <div class="logo">
+        TWO <span>OF</span> US
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#visit">Visit</a></li>
+    </ul>
+
+    <a href="#menu" class="order-button">
+        View Menu
+    </a>
+
+    <button class="mobile-menu" onclick="toggleMenu()">
+        ☰
+    </button>
+
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#menu" onclick="closeMenu()">Menu</a>
+    <a href="#visit" onclick="closeMenu()">Visit</a>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Welcome to
+        </div>
+
+        <h1>
+            Two of Us Cafe
+        </h1>
+
+        <p class="hero-description">
+            Good coffee, good food and good company.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#menu" class="button button-light">
+                Explore Menu
+            </a>
+
+            <a href="#visit" class="button button-outline">
+                Visit Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="container about">
+
+    <div class="about-image"></div>
+
+    <div class="about-text">
+
+        <div class="section-label">
+            Our Cafe
+        </div>
+
+        <h2 class="section-title">
+            Made for good moments.
+        </h2>
+
+        <p>
+            Two of Us Cafe is a welcoming local cafe
+            focused on great coffee, delicious food and
+            creating a comfortable place for people to meet.
+        </p>
+
+        <p>
+            Whether you're grabbing a quick coffee,
+            meeting friends or enjoying a meal,
+            there's always a reason to stay a little longer.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section class="menu-section" id="menu">
+
+<div class="container">
+
+    <div class="menu-heading">
+
+        <div class="section-label">
+            Our Menu
+        </div>
+
+        <h2 class="section-title">
+            Something for everyone.
+        </h2>
+
+        <p>
+            Explore some of the cafe favourites.
+            Prices that aren't displayed are available
+            at the ordering station.
+        </p>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+        <!-- COFFEE -->
+
+        <div class="menu-card">
+
+            <h3>
+                Coffee
+            </h3>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Espresso
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Long Black
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Latte
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Cappuccino
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Flat White
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- BREAKFAST -->
+
+        <div class="menu-card">
+
+            <h3>
+                Breakfast
+            </h3>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Breakfast
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Toast
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Eggs
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Cafe Favourites
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- LUNCH -->
+
+        <div class="menu-card">
+
+            <h3>
+                Lunch
+            </h3>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Sandwiches
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Burgers
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Salads
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+            <div class="menu-item">
+                <span class="menu-item-name">
+                    Daily Specials
+                </span>
+
+                <span class="menu-price">
+                    Ask at ordering station
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="full-menu">
+
+        <a
+            href="https://www.twoofuscafe.com.au/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button button-dark"
+        >
+            Visit Official Website
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     VISIT
+========================= -->
+
+<section id="visit">
+
+<div class="container">
+
+    <div class="section-label">
+        Come Say Hi
+    </div>
+
+    <h2 class="section-title">
+        Visit Two of Us.
+    </h2>
+
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <h3>
+                Opening Hours
+            </h3>
+
+            <p>
+                Check the official Two of Us Cafe
+                website for the latest opening hours.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Location
+            </h3>
+
+            <p>
+                Visit the official website for the
+                current cafe location and directions.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                For current contact information,
+                visit the official Two of Us Cafe website.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CALL TO ACTION
+========================= -->
+
+<section class="cta">
+
+<div class="container">
+
+    <div class="section-label">
+        Two of Us Cafe
+    </div>
+
+    <h2 class="section-title">
+        Coffee tastes better together.
+    </h2>
+
+    <p>
+        Come in, grab your favourite drink and enjoy
+        some time with good company.
+    </p>
+
+    <a
+        href="https://www.twoofuscafe.com.au/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button button-light"
+    >
+        Official Website
+    </a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+    <div class="footer-column">
+
+        <h3>
+            Two of Us Cafe
+        </h3>
+
+        <p>
+            Good coffee. Good food. Good company.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>
+            Navigate
+        </h3>
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>
+            Online
+        </h3>
+
+        <a
+            href="https://www.twoofuscafe.com.au/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Official Website
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="copyright">
+
+    © 2026 Two of Us Cafe. Website concept.
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("mobileNav");
+
+    menu.classList.toggle("active");
+
+}
+
+
+function closeMenu() {
+
+    const menu = document.getElementById("mobileNav");
+
+    menu.classList.remove("active");
+
+}
+
+</script>
+
+</body>
+</html>
+```
